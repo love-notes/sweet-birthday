@@ -462,7 +462,7 @@
   min-width: 0;
 }
 
-/* Title: harusnya "Nothing" gak mungkin kepotong lagi */
+/* Title: marquee scroll */
 #p2 .t1{
   font-size: 13px;
   font-weight: 800;
@@ -470,7 +470,18 @@
   line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip; /* bukan ellipsis */
+  position: relative;
+}
+
+#p2 .t1 .marquee-text{
+  display: inline-block;
+  padding-left: 100%;
+  animation: marqueeScroll 8s linear infinite;
+}
+
+@keyframes marqueeScroll{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
 /* Singer: 1 baris, no ellipsis */
@@ -984,7 +995,7 @@
             <!-- Globe with “bolong” lengkap -->
             <div class="qdot" title="Internet">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="white" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.6 9h-3.1c-.2-2.1-.7-4-1.3-5.1A8 8 0 0 1 19.6 11ZM12 4c.8 1 1.9 3.2 2.4 7H9.6c.5-3.8 1.6-6 2.4-7ZM8.8 5.9c-.6 1.4-1.1 3.2-1.3 5.1H4.4a8 8 0 0 1 4.4-5.1ZM4.4 13h3.1c.2 1.9.7 3.7 1.3 5.1A8 8 0 0 1 4.4 13ZM12 20c-.8-1-1.9-3.2-2.4-7h4.8c-.5 3.8-1.6 6-2.4 7Zm3.2-1.9c.6-1.4 1.1-3.2 1.3-5.1h3.1a8 8 0 0 1-4.4 5.1Z"/>
+                <path fill="white" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.6 9h-3.1c-.2-2.1-.7-4-1.3-5.1A8 8 0 0 1 19.6 11ZM12 4c.8 1 1.9 3.2 2.4 7H9.6c.5-3.8 1.6-6 2.4-7ZM8.8 5.9c-.6 1.4-1.1 3.2-1.3 5.1A8 8 0 0 1 4.4 11ZM4.4 13h3.1c.2 1.9.7 3.7 1.3 5.1A8 8 0 0 1 4.4 13ZM12 20c-.8-1-1.9-3.2-2.4-7h4.8c-.5 3.8-1.6 6-2.4 7Zm3.2-1.9c.6-1.4 1.1-3.2 1.3-5.1h3.1a8 8 0 0 1-4.4 5.1Z"/>
               </svg>
             </div>
           </div>
@@ -1017,7 +1028,7 @@
         </div>
 
         <div class="sp-mid">
-          <div class="t1">an art gallery could never be as unique as you</div>
+          <div class="t1"><span class="marquee-text">an art gallery could never be as unique as you</span></div>
           <div class="t2">mrld</div>
         </div>
 
